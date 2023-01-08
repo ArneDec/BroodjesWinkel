@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prb.Ee.Broodjes.Wpf"
         mc:Ignorable="d"
-        Title="PE02 Broodjeszaak-CoronaVibes" Height="450" Width="685" Icon="/BreadCrumb.png">
+        Title="SandwichBar" Height="450" Width="685" Icon="/BreadCrumb.png">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="20,24,0,0" Text="Naam klant :" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Margin="120,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
