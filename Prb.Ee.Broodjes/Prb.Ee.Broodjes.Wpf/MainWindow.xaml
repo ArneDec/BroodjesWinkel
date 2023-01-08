@@ -1,0 +1,50 @@
+﻿<Window x:Class="Prb.Ee.Broodjes.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prb.Ee.Broodjes.Wpf"
+        mc:Ignorable="d"
+        Title="PE02 Broodjeszaak-CoronaVibes" Height="450" Width="685" Icon="/BreadCrumb.png">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="20,24,0,0" Text="Naam klant :" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Margin="120,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <GroupBox Header="Bestelling" HorizontalAlignment="Left" Height="200" Margin="40,74,0,0" VerticalAlignment="Top" Width="265">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" Text="Broodje :"></TextBlock>
+                <ComboBox x:Name="cmbSandwiches"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,30,0,0" Text="Beleg :"></TextBlock>
+                <CheckBox x:Name="chkTopping1" Content="Hesp" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="chkTopping2" Content="Kaas" HorizontalAlignment="Left" Margin="100,55,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="chkTopping3" Content="Groentjes" HorizontalAlignment="Left" Margin="100,80,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="btnOrder" Content="Bestel" HorizontalAlignment="Left" Margin="29,143,0,0"  Width="100" VerticalAlignment="Top" Click="btnOrder_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Betaling" HorizontalAlignment="Left" Height="300" Margin="332,74,0,0" VerticalAlignment="Top" Width="155" >
+            <Grid>
+                <ListBox x:Name="lstOrderSummary" HorizontalAlignment="Center" Height="115" Margin="0,30,0,0" VerticalAlignment="Top" Width="125"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Overzicht :" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,170,0,0" Text="TotaalPrijs :" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <Button x:Name="btnPay" Content="Betaal" HorizontalAlignment="Center" Margin="0,212,0,0" Width="100" VerticalAlignment="Top" Click="btnPay_Click" />
+                <TextBlock x:Name="TblTotaal" HorizontalAlignment="Left" Margin="80,170,0,0" Text="€ 0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Button x:Name="btnEndDay" Content="Dag Afsluit" HorizontalAlignment="Center" Margin="0,247,0,0" Width="100" VerticalAlignment="Top" Click="BtnEndDay_Click" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Statistiek" HorizontalAlignment="Left" Height="95" Margin="40,279,0,0" VerticalAlignment="Top" Width="265" >
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Text="Omzet :" TextWrapping="Wrap"/>
+                <TextBlock x:Name="tblRevenue" HorizontalAlignment="Left" Margin="120,10,0,0" Text="€ 0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0" Text="# verkocht :" TextWrapping="Wrap"/>
+                <TextBlock x:Name="tblAmountSold" HorizontalAlignment="Left" Margin="120,30,0,26" Text="0" TextWrapping="Wrap" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" Text="Omzet/broodje :" TextWrapping="Wrap"/>
+                <TextBlock x:Name="tblRevenueAvarage" HorizontalAlignment="Left" Margin="120,50,0,0" Text="€ 0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
+            </Grid>
+        </GroupBox>
+        <TextBlock x:Name="tbkError" HorizontalAlignment="Center" Height="25" Margin="0,0,0,10" Text="Foutmeldingen" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="434" Foreground="#FFDF0C0C"/>
+        <GroupBox Header="Bestellingen" HorizontalAlignment="Left" Height="300" Margin="515,74,0,0" VerticalAlignment="Top" Width="145">
+            <ListBox x:Name="LstBestellingen" HorizontalAlignment="Center" Height="233" VerticalAlignment="Top" Width="130"/>
+        </GroupBox>
+        <Button x:Name="btnRemoveOrder" Content="Verwijder bestelling" HorizontalAlignment="Left" Margin="532,339,0,0" Width="110
+                " VerticalAlignment="Top" Click="btnRemoveOrder_Click"/>
+    </Grid>
+</Window>
