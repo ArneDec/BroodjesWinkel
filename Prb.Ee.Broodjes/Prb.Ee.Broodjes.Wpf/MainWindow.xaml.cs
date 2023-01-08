@@ -160,6 +160,7 @@ namespace Prb.Ee.Broodjes.Wpf
         //Methode om Alles bij te houden en te berekening in het statistiek deeltje
         private void MakeStatistics()
         {
+
             revenue = sumBreadAndTopping.Sum();
             revenuePerSandwich = Math.Round(revenue, 2) / sandwichesSold;
             tblRevenue.Text = revenue.ToString();
@@ -200,13 +201,26 @@ namespace Prb.Ee.Broodjes.Wpf
             //verwijderd een specifieke bestelling in de lijst bestellingen
             int index = LstBestellingen.SelectedIndex;
 
-            if (index >= 0 && index < sumBreadAndTopping.Count)
+            if (LstBestellingen.Items.Count > 1)
             {
-                sumBreadAndTopping.RemoveAt(index);
-                LstBestellingen.Items.RemoveAt(index);
-                sandwichesSold--;
-                MakeStatistics();
+                try
+                {
+                    sumBreadAndTopping.RemoveAt(index);
+                    LstBestellingen.Items.RemoveAt(index);
+                    sandwichesSold--;
+                    MakeStatistics();
+                }
+                catch (DivideByZeroException ex)
+                {
+                    MessageBox.Show("Kan laatste bestelling niet verwijderen", "Fout!", MessageBoxButton.OK, MessageBoxImage.Error) ;
+                }
             }
+            else
+            {
+                MessageBox.Show("voeg een nieuwe bestelling toe alvorens de laatste bestelling te verwijderen", "Fout bij verwijderen!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            
         }
 
 
